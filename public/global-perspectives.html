@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Perspectives | SMP Playbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/design-tokens.css" />
+    <link rel="stylesheet" href="styles/base-typography.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/accessibility.css" />
+    <link rel="stylesheet" href="styles/premium.css" />
+    <style>
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+      .section-fade {
+        animation: slideDown 0.6s ease-out both;
+      }
+      .tab-active {
+        background-color: #f97316 !important;
+        color: white !important;
+        border-color: #ea580c !important;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-800 font-sans antialiased">
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-slate-100">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a
+          href="../index.html"
+          class="text-orange-700 font-bold text-lg hover:text-orange-900 flex items-center gap-2 transition hover:gap-3"
+          aria-label="Return to hub"
+          ><span class="hidden sm:inline">&larr; Back to Hub</span
+          ><span class="sm:hidden">&larr;</span></a
+        >
+        <span
+          class="text-xs font-bold tracking-widest uppercase text-orange-600"
+          >Pillar 4</span
+        >
+      </div>
+    </nav>
+
+    <header
+      class="bg-gradient-to-br from-orange-900 via-orange-800 to-orange-600 text-white py-16 px-6"
+    >
+      <div class="max-w-4xl mx-auto">
+        <span
+          class="text-orange-200 text-sm font-bold tracking-widest uppercase"
+          >World-Class Delivery</span
+        >
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-4 mt-2 leading-tight">
+          Global Perspectives
+        </h1>
+        <p class="text-xl text-orange-100 max-w-2xl leading-relaxed">
+          Modules 9–11: Managing organizational diversity, calibrating to
+          regional service metrics across North America, Europe, and Asia, and
+          engineering the customer experience.
+        </p>
+      </div>
+    </header>
+
+    <main id="main" class="max-w-4xl mx-auto px-6 py-16 space-y-20">
+      <section class="section-fade">
+        <div class="mb-8">
+          <span
+            class="inline-block px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-bold tracking-widest uppercase mb-2"
+            >Module 9</span
+          >
+          <h2 class="text-4xl font-extrabold text-slate-900 mb-2">
+            Cultural Diversity & Competence
+          </h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-orange-500 to-orange-300 rounded"
+          ></div>
+        </div>
+
+        <div
+          class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm mb-10"
+        >
+          <p class="text-slate-700 leading-relaxed mb-4">
+            Diversity encompasses individual traits over which a person has
+            minimal control, such as biologically determined characteristics
+            (race, age, physical attributes) and the sociological environment
+            into which they are born. In a global business context, cultural
+            competence transforms these perceived divides into operational
+            advantages.
+          </p>
+          <p class="text-slate-700 leading-relaxed mb-4">
+            Implementing a comprehensive diversity framework yields measurable
+            organizational benefits. These include the full utilization of human
+            resources, diminished interpersonal conflict, and the formation of a
+            shared organizational vision. Furthermore, diverse teams demonstrate
+            greater flexibility and improved problem-solving capabilities, as
+            less energy is expended managing cultural friction.
+          </p>
+          <p class="text-slate-700 leading-relaxed">
+            Successful integration requires analyzing everyday operations to
+            identify <strong>Enablers</strong> (factors that facilitate mature
+            interactions and require board-level commitment) and
+            <strong>Barriers</strong> (constructs that hinder progress, such as
+            organizational inertia or linguistic differences).
+          </p>
+        </div>
+
+        <div
+          class="bg-gradient-to-br from-slate-900 to-orange-950 text-white rounded-2xl p-8 shadow-lg"
+        >
+          <h3
+            class="text-2xl font-bold mb-2 text-white flex items-center gap-2"
+          >
+            Diversity Classification Drill
+          </h3>
+          <p class="text-orange-200 mb-6 text-sm">
+            Evaluate the following organizational factors and classify them as
+            an "Enabler" or a "Barrier" to diversity integration.
+          </p>
+
+          <div class="bg-white text-slate-800 p-6 rounded-xl text-center">
+            <div
+              id="sorter-card"
+              class="min-h-[100px] flex items-center justify-center mb-6 p-4 border-2 border-dashed border-orange-300 rounded-xl bg-orange-50"
+            >
+              <p id="sorter-text" class="text-xl font-bold text-orange-900">
+                Commitment by board and top management
+              </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4" id="sorter-buttons">
+              <button
+                onclick="sortItem('enabler')"
+                class="btn-action border-2 border-emerald-500 bg-emerald-50 text-emerald-700 font-bold py-3 rounded-xl hover:bg-emerald-100 transition-all"
+              >
+                Enabler
+              </button>
+              <button
+                onclick="sortItem('barrier')"
+                class="btn-action border-2 border-red-500 bg-red-50 text-red-700 font-bold py-3 rounded-xl hover:bg-red-100 transition-all"
+              >
+                Barrier
+              </button>
+            </div>
+
+            <div
+              id="sorter-progress"
+              class="mt-6 text-sm font-semibold text-slate-400 uppercase tracking-widest"
+            >
+              Item 1 of 5
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-fade" style="animation-delay: 0.1s">
+        <div class="mb-8">
+          <span
+            class="inline-block px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-bold tracking-widest uppercase mb-2"
+            >Module 10</span
+          >
+          <h2 class="text-4xl font-extrabold text-slate-900 mb-2">
+            Regional Service Expectations
+          </h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-orange-500 to-orange-300 rounded"
+          ></div>
+        </div>
+
+        <p class="text-slate-700 leading-relaxed mb-8">
+          Service Standards function as the rules of engagement for customer
+          interaction, establishing a generic behavioral template that guides
+          employees during critical decision-making moments. These standards
+          cross geographic boundaries, but distinct regions utilize specialized
+          frameworks to evaluate service quality and consumer behavior.
+        </p>
+
+        <div
+          class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden"
+        >
+          <div class="flex flex-wrap border-b border-slate-200 bg-slate-50">
+            <button
+              onclick="switchTab('na')"
+              id="tab-na"
+              class="btn-outline flex-1 py-4 px-6 font-bold text-sm uppercase tracking-widest text-slate-500 hover:bg-orange-50 hover:text-orange-600 transition-all tab-active rounded-none border-0 border-r border-slate-200"
+            >
+              North America
+            </button>
+            <button
+              onclick="switchTab('eu')"
+              id="tab-eu"
+              class="btn-outline flex-1 py-4 px-6 font-bold text-sm uppercase tracking-widest text-slate-500 hover:bg-orange-50 hover:text-orange-600 transition-all rounded-none border-0 border-r border-slate-200"
+            >
+              Europe
+            </button>
+            <button
+              onclick="switchTab('asia')"
+              id="tab-asia"
+              class="btn-outline flex-1 py-4 px-6 font-bold text-sm uppercase tracking-widest text-slate-500 hover:bg-orange-50 hover:text-orange-600 transition-all rounded-none border-0"
+            >
+              Asia
+            </button>
+          </div>
+
+          <div class="p-8">
+            <div id="content-na" class="block animate-fade-in-up">
+              <h3 class="text-2xl font-bold text-orange-900 mb-3">
+                American Customer Satisfaction Index (ACSI)
+              </h3>
+              <p class="text-slate-700 leading-relaxed mb-4">
+                The ACSI is a premier economic indicator produced by a private
+                organization based in Ann Arbor, Michigan. It quantifies the
+                satisfaction rate of consumers across the United States. This
+                index provides essential data for service organizations to
+                independently validate their customer relationship management
+                (CRM) methodologies.
+              </p>
+              <div class="bg-orange-50 p-4 rounded-xl border border-orange-100">
+                <p class="text-sm text-orange-800 font-semibold">
+                  Market Dynamics: North America possesses a highly diverse
+                  demographic base (Caucasians, Mestizos, Blacks, Indigenous
+                  Americans, and Asians). Consumer spending is heavily indexed
+                  toward durable goods, including motor vehicles, furnishings,
+                  and recreational equipment.
+                </p>
+              </div>
+            </div>
+
+            <div id="content-eu" class="hidden animate-fade-in-up">
+              <h3 class="text-2xl font-bold text-orange-900 mb-3">
+                European CEN Standards & Equality Directives
+              </h3>
+              <p class="text-slate-700 leading-relaxed mb-4">
+                The European Committee for Standardization (CEN) establishes
+                rigorous behavioral and service templates. According to a
+                comprehensive survey conducted by the Technopolis Group, 93% of
+                sector professionals are aware of these standards, 84% actively
+                utilize them, and 95% affirm that adherence directly improves
+                the ability to demonstrate service quality to end-users.
+              </p>
+              <div class="bg-orange-50 p-4 rounded-xl border border-orange-100">
+                <p class="text-sm text-orange-800 font-semibold">
+                  Institutional Context: European organizations place
+                  significant emphasis on formalized Equality and Diversity
+                  statements. The overarching mandate is the creation of a
+                  "fairer society" that systematically dismantles prejudice
+                  regarding gender, race, disability, and sexual orientation.
+                </p>
+              </div>
+            </div>
+
+            <div id="content-asia" class="hidden animate-fade-in-up">
+              <h3 class="text-2xl font-bold text-orange-900 mb-3">
+                Asian Consumer Markets & Cultural Toponymy
+              </h3>
+              <p class="text-slate-700 leading-relaxed mb-4">
+                Asia acts as a global workshop due to its abundant labor supply
+                and developing infrastructure. It is the largest and most
+                culturally diverse continent. Analyzing this market presents a
+                structural challenge, as the behavioral models predominantly
+                used to interpret Asian consumer psychology were originally
+                formulated in the West. Additionally, the Household Final
+                Consumption Expenditure (HFCE) among regional states typically
+                varies between 70% and 90%.
+              </p>
+              <div class="bg-orange-50 p-4 rounded-xl border border-orange-100">
+                <p class="text-sm text-orange-800 font-semibold">
+                  Linguistic Density: The region contains high linguistic
+                  fragmentation. For context, there are more than 600 natively
+                  spoken languages in Indonesia, over 800 in India, and more
+                  than 100 in the Philippines.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-fade" style="animation-delay: 0.2s">
+        <div class="mb-8">
+          <span
+            class="inline-block px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-bold tracking-widest uppercase mb-2"
+            >Module 11</span
+          >
+          <h2 class="text-4xl font-extrabold text-slate-900 mb-2">
+            Excellent Customer Experience
+          </h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-orange-500 to-orange-300 rounded"
+          ></div>
+        </div>
+
+        <p class="text-slate-700 leading-relaxed mb-8">
+          Customer Relationship Management (CRM) requires a structured approach
+          to translate cultural competence into measurable satisfaction.
+          Developing an excellent customer experience necessitates executing
+          three primary phases. Select the components below to review the
+          procedural definitions.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="flip h-56 cursor-pointer group" tabindex="0">
+            <div class="flip-inner">
+              <div
+                class="flip-face bg-white border border-slate-200 shadow-sm group-hover:shadow-md group-hover:border-orange-300 transition-all duration-300 rounded-2xl p-6 flex flex-col justify-center items-center text-center"
+              >
+                <h4 class="font-extrabold text-orange-600 text-2xl">Design</h4>
+                <span
+                  class="mt-4 text-[10px] uppercase tracking-widest text-slate-400 font-bold group-hover:text-orange-500 transition-colors"
+                  >Select to expand</span
+                >
+              </div>
+              <div
+                class="flip-face flip-back bg-gradient-to-br from-orange-500 to-orange-700 text-white shadow-lg rounded-2xl p-6 flex flex-col justify-center text-center"
+              >
+                <p class="text-sm font-medium leading-relaxed">
+                  Formulate the theoretical service standards, outline the
+                  Customer Relationship Management methodology, and establish
+                  the parameters for data centralization prior to execution.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip h-56 cursor-pointer group" tabindex="0">
+            <div class="flip-inner">
+              <div
+                class="flip-face bg-white border border-slate-200 shadow-sm group-hover:shadow-md group-hover:border-orange-300 transition-all duration-300 rounded-2xl p-6 flex flex-col justify-center items-center text-center"
+              >
+                <h4 class="font-extrabold text-orange-600 text-2xl">Deliver</h4>
+                <span
+                  class="mt-4 text-[10px] uppercase tracking-widest text-slate-400 font-bold group-hover:text-orange-500 transition-colors"
+                  >Select to expand</span
+                >
+              </div>
+              <div
+                class="flip-face flip-back bg-gradient-to-br from-orange-600 to-red-600 text-white shadow-lg rounded-2xl p-6 flex flex-col justify-center text-center"
+              >
+                <p class="text-sm font-medium leading-relaxed">
+                  Execute the established standards with precision at the point
+                  of contact. This phase requires the practical application of
+                  cultural competence to manage diverse consumer expectations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip h-56 cursor-pointer group" tabindex="0">
+            <div class="flip-inner">
+              <div
+                class="flip-face bg-white border border-slate-200 shadow-sm group-hover:shadow-md group-hover:border-orange-300 transition-all duration-300 rounded-2xl p-6 flex flex-col justify-center items-center text-center"
+              >
+                <h4 class="font-extrabold text-orange-600 text-2xl">Develop</h4>
+                <span
+                  class="mt-4 text-[10px] uppercase tracking-widest text-slate-400 font-bold group-hover:text-orange-500 transition-colors"
+                  >Select to expand</span
+                >
+              </div>
+              <div
+                class="flip-face flip-back bg-gradient-to-br from-red-600 to-red-800 text-white shadow-lg rounded-2xl p-6 flex flex-col justify-center text-center"
+              >
+                <p class="text-sm font-medium leading-relaxed">
+                  Drive continuous improvement by analyzing CRM data. Iterate
+                  upon the service templates to address gaps in performance and
+                  adapt to shifting regional market demands.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      try {
+        const k = "scp_progress_v1";
+        const s = JSON.parse(localStorage.getItem(k)) || {};
+        s["global-perspectives"] = true;
+        localStorage.setItem(k, JSON.stringify(s));
+      } catch (e) {}
+
+      function switchTab(region) {
+        ["na", "eu", "asia"].forEach((r) => {
+          document.getElementById("tab-" + r).classList.remove("tab-active");
+          document.getElementById("content-" + r).classList.add("hidden");
+          document.getElementById("content-" + r).classList.remove("block");
+        });
+        document.getElementById("tab-" + region).classList.add("tab-active");
+        document.getElementById("content-" + region).classList.remove("hidden");
+        document.getElementById("content-" + region).classList.add("block");
+      }
+
+      const items = [
+        { text: "Commitment by board and top management", type: "enabler" },
+        { text: "Overdependence on external consultants", type: "barrier" },
+        {
+          text: "Conducting needs assessments and strategic planning",
+          type: "enabler",
+        },
+        {
+          text: "Linguistic differences and cultural friction",
+          type: "barrier",
+        },
+        {
+          text: "Broad involvement across organizational tiers",
+          type: "enabler",
+        },
+      ];
+
+      let currentIndex = 0;
+      const textEl = document.getElementById("sorter-text");
+      const cardEl = document.getElementById("sorter-card");
+      const progEl = document.getElementById("sorter-progress");
+      const buttonsEl = document.getElementById("sorter-buttons");
+
+      function sortItem(guess) {
+        const correct = items[currentIndex].type === guess;
+
+        cardEl.classList.remove("bg-orange-50", "border-orange-300");
+        if (correct) {
+          cardEl.classList.add("bg-emerald-100", "border-emerald-500");
+          textEl.classList.replace("text-orange-900", "text-emerald-800");
+          textEl.textContent =
+            "Correct. " +
+            items[currentIndex].text +
+            " functions as an " +
+            items[currentIndex].type.toUpperCase() +
+            ".";
+        } else {
+          cardEl.classList.add("bg-red-100", "border-red-500");
+          textEl.classList.replace("text-orange-900", "text-red-800");
+          textEl.textContent =
+            "Incorrect. " +
+            items[currentIndex].text +
+            " functions as a " +
+            items[currentIndex].type.toUpperCase() +
+            ".";
+        }
+
+        buttonsEl.style.pointerEvents = "none";
+        buttonsEl.style.opacity = "0.5";
+
+        setTimeout(() => {
+          currentIndex++;
+          if (currentIndex < items.length) {
+            cardEl.className =
+              "min-h-[100px] flex items-center justify-center mb-6 p-4 border-2 border-dashed border-orange-300 rounded-xl bg-orange-50 transition-all";
+            textEl.className = "text-xl font-bold text-orange-900";
+            textEl.textContent = items[currentIndex].text;
+            progEl.textContent = `Item ${currentIndex + 1} of ${items.length}`;
+            buttonsEl.style.pointerEvents = "auto";
+            buttonsEl.style.opacity = "1";
+          } else {
+            cardEl.className =
+              "min-h-[100px] flex items-center justify-center mb-6 p-4 border-2 border-orange-400 rounded-xl bg-orange-100";
+            textEl.className = "text-xl font-bold text-orange-900";
+            textEl.textContent =
+              "Drill Complete. You have successfully classified the factors of organizational diversity.";
+            buttonsEl.style.display = "none";
+            progEl.style.display = "none";
+          }
+        }, 1800);
+      }
+
+      document.querySelectorAll(".flip").forEach((el) => {
+        const toggle = () => {
+          el.classList.toggle("is-flipped");
+        };
+        el.addEventListener("click", toggle);
+        el.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggle();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT-BPM Standards | SMP Playbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Design System Imports -->
+    <link rel="stylesheet" href="styles/design-tokens.css" />
+    <link rel="stylesheet" href="styles/base-typography.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/accessibility.css" />
+    <link rel="stylesheet" href="styles/premium.css" />
+    <style>
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      /* Respect user motion preferences */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      .section-fade {
+        animation: slideDown 0.6s ease-out both;
+      }
+      .smart-pill {
+        transition: all 0.2s ease;
+      }
+      .smart-pill[data-on="true"] {
+        background: #7c3aed;
+        color: #fff;
+        border-color: #6d28d9;
+      }
+      .drill-cell {
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-800 font-sans antialiased">
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-slate-100">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a
+          href="../index.html"
+          class="text-purple-700 font-bold text-lg hover:text-purple-900 flex items-center gap-2 transition hover:gap-3"
+          aria-label="Return to hub"
+          ><span class="hidden sm:inline">← Back to Hub</span
+          ><span class="sm:hidden">←</span></a
+        >
+        <div class="flex items-center gap-4">
+          <span
+            class="text-xs font-bold tracking-widest uppercase text-purple-600"
+            >Pillar 3</span
+          >
+          <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+        </div>
+      </div>
+    </nav>
+
+    <header
+      class="bg-gradient-to-br from-purple-900 via-purple-800 to-purple-700 text-white py-16 px-6 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute top-0 right-0 w-96 h-96 bg-purple-400 rounded-full blur-3xl"
+        ></div>
+      </div>
+      <div class="max-w-4xl mx-auto relative z-10">
+        <span
+          class="text-purple-200 text-sm font-bold tracking-widest uppercase"
+          >Professional Excellence</span
+        >
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-4 mt-2 leading-tight">
+          IT-BPM Excellence
+        </h1>
+        <p class="text-xl text-purple-100 max-w-2xl">
+          Modules 7 & 8: Master Industry Competencies and Career Sustainability.
+        </p>
+      </div>
+    </header>
+
+    <main id="main" class="max-w-4xl mx-auto px-6 py-16 space-y-20">
+      <!-- Module 7: Competencies + Perceptual Speed Drill -->
+      <section class="section-fade">
+        <div class="mb-8">
+          <span
+            class="inline-block px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-bold tracking-widest uppercase mb-2"
+            >Module 7</span
+          >
+          <h2 class="text-4xl font-extrabold text-slate-900 mb-2">
+            Industry Competencies
+          </h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-purple-500 to-purple-300 rounded"
+          ></div>
+        </div>
+        <p class="text-lg text-slate-700 mb-10 leading-relaxed">
+          The IT-BPM industry looks for specific cognitive and technical skills
+          that go beyond basic knowledge.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div
+            class="bg-white p-6 border-l-4 border-purple-500 shadow-md rounded-r-lg hover:shadow-lg transition"
+          >
+            <div class="flex items-start gap-3">
+              <div>
+                <h3 class="font-bold text-xl text-slate-800 mb-2">
+                  Cognitive Ability
+                </h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Apply root-cause analysis and abstract thinking to solve
+                  complex problems.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white p-6 border-l-4 border-purple-500 shadow-md rounded-r-lg hover:shadow-lg transition"
+          >
+            <div class="flex items-start gap-3">
+              <div>
+                <h3 class="font-bold text-xl text-slate-800 mb-2">
+                  Perceptual Speed
+                </h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Quickly and accurately compare letters, numbers, objects, or
+                  patterns.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white p-6 border-l-4 border-purple-500 shadow-md rounded-r-lg hover:shadow-lg transition"
+          >
+            <div class="flex items-start gap-3">
+              <div>
+                <h3 class="font-bold text-xl text-slate-800 mb-2">
+                  English Proficiency
+                </h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Clear communication skills, vital for interacting with global
+                  markets.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white p-6 border-l-4 border-purple-500 shadow-md rounded-r-lg hover:shadow-lg transition"
+          >
+            <div class="flex items-start gap-3">
+              <div>
+                <h3 class="font-bold text-xl text-slate-800 mb-2">
+                  Responsiveness
+                </h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Going the extra mile to ensure all customer concerns are
+                  addressed promptly.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Perceptual Speed Drill -->
+        <div
+          class="bg-gradient-to-br from-slate-900 to-purple-900 text-white rounded-2xl p-6 md:p-8 shadow-lg"
+        >
+          <div
+            class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4"
+          >
+            <div>
+              <h3 class="text-2xl font-bold flex items-center gap-2 text-white">
+                Perceptual Speed Drill
+              </h3>
+              <p class="text-purple-200 text-sm">
+                Tap every <strong class="text-white">odd number</strong> in the
+                grid before time runs out.
+              </p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span
+                class="bg-purple-800/60 px-3 py-1.5 rounded-lg text-sm font-mono"
+                >⏱ <span id="drill-time">30</span>s</span
+              >
+              <span
+                class="bg-purple-800/60 px-3 py-1.5 rounded-lg text-sm font-mono"
+                >✓ <span id="drill-score">0</span></span
+              >
+              <button
+                id="drill-start"
+                class="btn-outline bg-white text-purple-800 font-bold px-5 py-2.5 rounded-xl hover:bg-purple-50 transition-all text-sm border-2 border-purple-100 hover:border-purple-300 shadow-sm hover:shadow"
+              >
+                Start
+              </button>
+            </div>
+          </div>
+          <div
+            id="drill-grid"
+            class="grid grid-cols-6 sm:grid-cols-8 gap-2 mt-4"
+          ></div>
+          <p
+            id="drill-result"
+            class="hidden mt-4 p-3 rounded-lg font-semibold text-center"
+          ></p>
+        </div>
+      </section>
+
+      <!-- Module 8: SMART Goal Generator -->
+      <section class="section-fade" style="animation-delay: 0.1s">
+        <div class="mb-8">
+          <span
+            class="inline-block px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-bold tracking-widest uppercase mb-2"
+            >Module 8</span
+          >
+          <h2 class="text-4xl font-extrabold text-slate-900 mb-2">
+            SMART Goal Generator
+          </h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-purple-500 to-purple-300 rounded"
+          ></div>
+        </div>
+
+        <div
+          class="bg-white border border-purple-200 rounded-2xl shadow-md p-6 md:p-8"
+        >
+          <p class="text-slate-600 mb-6">
+            Fill in each field. The criteria pills light up as you meet them,
+            and your goal statement assembles live below.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-5 mb-6">
+            <label class="block">
+              <span
+                class="text-xs font-bold tracking-widest uppercase text-purple-700"
+                >Specific</span
+              >
+              <input
+                data-smart="s"
+                type="text"
+                class="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-400 focus:outline-none"
+                placeholder="What exactly will you do?"
+              />
+            </label>
+            <label class="block">
+              <span
+                class="text-xs font-bold tracking-widest uppercase text-purple-700"
+                >Measurable</span
+              >
+              <input
+                data-smart="m"
+                type="text"
+                class="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-400 focus:outline-none"
+                placeholder="e.g. raise CSAT by 8 points"
+              />
+            </label>
+            <label class="block">
+              <span
+                class="text-xs font-bold tracking-widest uppercase text-purple-700"
+                >Achievable</span
+              >
+              <input
+                data-smart="a"
+                type="text"
+                class="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-400 focus:outline-none"
+                placeholder="What resources/skills make it doable?"
+              />
+            </label>
+            <label class="block">
+              <span
+                class="text-xs font-bold tracking-widest uppercase text-purple-700"
+                >Relevant</span
+              >
+              <input
+                data-smart="r"
+                type="text"
+                class="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-400 focus:outline-none"
+                placeholder="Why does it matter to your role?"
+              />
+            </label>
+            <label class="block md:col-span-2">
+              <span
+                class="text-xs font-bold tracking-widest uppercase text-purple-700"
+                >Time-bound</span
+              >
+              <input
+                data-smart="t"
+                type="date"
+                class="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-400 focus:outline-none"
+              />
+            </label>
+          </div>
+
+          <div class="flex flex-wrap gap-2 mb-6" id="smart-pills">
+            <span
+              class="smart-pill text-xs font-bold uppercase tracking-widest border border-slate-300 text-slate-500 px-3 py-1 rounded-full"
+              data-pill="s"
+              >Specific</span
+            >
+            <span
+              class="smart-pill text-xs font-bold uppercase tracking-widest border border-slate-300 text-slate-500 px-3 py-1 rounded-full"
+              data-pill="m"
+              >Measurable</span
+            >
+            <span
+              class="smart-pill text-xs font-bold uppercase tracking-widest border border-slate-300 text-slate-500 px-3 py-1 rounded-full"
+              data-pill="a"
+              >Achievable</span
+            >
+            <span
+              class="smart-pill text-xs font-bold uppercase tracking-widest border border-slate-300 text-slate-500 px-3 py-1 rounded-full"
+              data-pill="r"
+              >Relevant</span
+            >
+            <span
+              class="smart-pill text-xs font-bold uppercase tracking-widest border border-slate-300 text-slate-500 px-3 py-1 rounded-full"
+              data-pill="t"
+              >Time-bound</span
+            >
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200 rounded-xl p-5"
+          >
+            <p
+              class="text-xs font-bold uppercase tracking-widest text-purple-700 mb-2"
+            >
+              Your Goal Statement
+            </p>
+            <p
+              id="smart-output"
+              class="text-lg text-slate-800 leading-relaxed italic"
+            >
+              Start typing above and your SMART goal will appear here…
+            </p>
+            <div class="mt-4 flex items-center gap-3">
+              <button
+                id="smart-copy"
+                class="btn-action text-xs font-semibold bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition shadow-sm hover:shadow"
+              >
+                Copy
+              </button>
+              <span
+                id="smart-copied"
+                class="text-xs text-emerald-600 font-semibold hidden"
+                >Copied!</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      try {
+        const k = "scp_progress_v1";
+        const s = JSON.parse(localStorage.getItem(k)) || {};
+        s["industry-excellence"] = true;
+        localStorage.setItem(k, JSON.stringify(s));
+      } catch (e) {}
+
+      // ---------- SMART generator ----------
+      const inputs = { s: "", m: "", a: "", r: "", t: "" };
+      const out = document.getElementById("smart-output");
+      function fmtDate(iso) {
+        if (!iso) return "";
+        try {
+          return new Date(iso + "T00:00:00").toLocaleDateString(undefined, {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          });
+        } catch {
+          return iso;
+        }
+      }
+      function renderSmart() {
+        document
+          .querySelectorAll("[data-smart]")
+          .forEach((el) => (inputs[el.dataset.smart] = el.value.trim()));
+        document
+          .querySelectorAll(".smart-pill")
+          .forEach((p) => (p.dataset.on = String(!!inputs[p.dataset.pill])));
+        const filled = Object.values(inputs).filter(Boolean).length;
+        if (filled === 0) {
+          out.textContent =
+            "Start typing above and your SMART goal will appear here…";
+          return;
+        }
+        const parts = [];
+        if (inputs.s) parts.push("I will " + inputs.s);
+        if (inputs.m) parts.push(", measured by " + inputs.m);
+        if (inputs.a) parts.push(", leveraging " + inputs.a);
+        if (inputs.r) parts.push(", because " + inputs.r);
+        if (inputs.t) parts.push(", by " + fmtDate(inputs.t));
+        out.textContent = parts.join("") + ".";
+      }
+      document
+        .querySelectorAll("[data-smart]")
+        .forEach((el) => el.addEventListener("input", renderSmart));
+      document
+        .getElementById("smart-copy")
+        .addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(out.textContent);
+            const tag = document.getElementById("smart-copied");
+            tag.classList.remove("hidden");
+            setTimeout(() => tag.classList.add("hidden"), 1500);
+          } catch (e) {}
+        });
+
+      // ---------- Perceptual Speed Drill ----------
+      const grid = document.getElementById("drill-grid");
+      const timeEl = document.getElementById("drill-time");
+      const scoreEl = document.getElementById("drill-score");
+      const resultEl = document.getElementById("drill-result");
+      const startBtn = document.getElementById("drill-start");
+      let timer = null,
+        remaining = 30,
+        score = 0,
+        totalOdds = 0,
+        running = false;
+
+      function buildGrid() {
+        grid.innerHTML = "";
+        score = 0;
+        totalOdds = 0;
+        scoreEl.textContent = "0";
+        const cells = 48;
+        for (let i = 0; i < cells; i++) {
+          const n = Math.floor(Math.random() * 90) + 10; // 10-99
+          if (n % 2 === 1) totalOdds++;
+          const b = document.createElement("button");
+
+          // Added btn-quiz bypass and premium card styling
+          b.className =
+            "drill-cell btn-quiz bg-white border-2 border-slate-100 text-slate-800 font-bold py-3 rounded-xl hover:bg-purple-50 hover:border-purple-300 transition-all text-sm shadow-sm hover:shadow";
+          b.textContent = n;
+          b.dataset.val = n;
+
+          b.addEventListener("click", () => {
+            if (!running || b.disabled) return;
+            const v = parseInt(b.dataset.val, 10);
+            if (v % 2 === 1) {
+              // High-contrast Correct Answer
+              b.className =
+                "drill-cell btn-quiz bg-emerald-500 text-white border-2 border-emerald-400 font-bold py-3 rounded-xl transition-all text-sm shadow-inner";
+              score++;
+              scoreEl.textContent = score;
+            } else {
+              // High-contrast Wrong Answer
+              b.className =
+                "drill-cell btn-quiz bg-red-900 text-red-100 border-2 border-red-500 font-bold py-3 rounded-xl transition-all text-sm shadow-inner";
+              score = Math.max(0, score - 1);
+              scoreEl.textContent = score;
+            }
+
+            b.disabled = true;
+            // Force opacity back to 100% to override premium.css disabled state
+            b.style.opacity = "1";
+
+            if (score >= totalOdds) endDrill(true);
+          });
+          grid.appendChild(b);
+        }
+      }
+      function endDrill(won) {
+        running = false;
+        clearInterval(timer);
+        timer = null;
+        startBtn.textContent = "Restart";
+        resultEl.classList.remove(
+          "hidden",
+          "bg-emerald-500/20",
+          "bg-red-500/20",
+          "text-emerald-100",
+          "text-red-100",
+        );
+        if (won) {
+          resultEl.classList.add("bg-emerald-500/20", "text-emerald-100");
+          resultEl.textContent =
+            "🏆 Perfect — all odd numbers found in " + (30 - remaining) + "s.";
+        } else {
+          resultEl.classList.add("bg-red-500/20", "text-red-100");
+          resultEl.textContent =
+            "⏰ Time! You found " +
+            score +
+            " of " +
+            totalOdds +
+            " odd numbers.";
+        }
+      }
+      startBtn.addEventListener("click", () => {
+        clearInterval(timer);
+        buildGrid();
+        remaining = 30;
+        timeEl.textContent = remaining;
+        resultEl.classList.add("hidden");
+        running = true;
+        startBtn.textContent = "Reset";
+        timer = setInterval(() => {
+          remaining--;
+          timeEl.textContent = remaining;
+          if (remaining <= 0) endDrill(false);
+        }, 1000);
+      });
+      buildGrid();
+    </script>
+  </body>
+</html>

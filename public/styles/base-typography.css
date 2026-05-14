@@ -1,0 +1,70 @@
+/**
+ * Typography Foundation
+ */
+html {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg-default);
+  color: var(--color-text-primary);
+  font-size: var(--type-base);
+  line-height: var(--leading-base);
+  letter-spacing: var(--letter-normal);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--letter-tight);
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: var(--type-4xl);
+}
+h2 {
+  font-size: var(--type-3xl);
+}
+h3 {
+  font-size: var(--type-2xl);
+}
+h4 {
+  font-size: var(--type-lg);
+}
+
+p {
+  margin: 0 0 1rem 0;
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color var(--anim-snappy);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+strong,
+b {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}

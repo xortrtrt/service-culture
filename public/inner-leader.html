@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Inner Leader | Service Culture Playbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>The Inner Leader | Service Culture Playbook</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="stylesheet" href="styles/design-tokens.css" />
+      <link rel="stylesheet" href="styles/base-typography.css" />
+      <link rel="stylesheet" href="styles/components.css" />
+      <link rel="stylesheet" href="styles/accessibility.css" />
+      <link rel="stylesheet" href="styles/premium.css" />
+      <style>
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        /* Respect user motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
+        .section-fade {
+          animation: slideDown 0.6s ease-out both;
+        }
+      </style>
+    </head>
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-slate-200">
+      <div
+        class="max-w-4xl mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <a
+          href="../index.html"
+          class="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors hover:gap-3"
+          aria-label="Return to hub"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+          <span class="hidden sm:inline">Back to Hub</span>
+          <span class="sm:hidden">Back</span>
+        </a>
+        <div class="flex items-center gap-3">
+          <span
+            class="text-xs font-bold tracking-widest uppercase text-blue-600 bg-blue-50 px-3 py-1 rounded-full"
+            >Pillar 1</span
+          >
+          <span class="text-xs text-slate-400">●</span>
+          <span class="text-xs font-medium text-slate-600"
+            >The Inner Leader</span
+          >
+        </div>
+      </div>
+    </nav>
+
+    <header
+      class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600 text-white py-16 px-6 border-b-4 border-blue-400"
+    >
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="inline-block w-3 h-3 rounded-full bg-blue-300"></span>
+          <span
+            class="text-blue-100 text-sm font-bold tracking-widest uppercase"
+            >Self-Mastery Foundation</span
+          >
+        </div>
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+          The Inner Leader
+        </h1>
+        <p class="text-xl text-blue-100 max-w-2xl leading-relaxed">
+          Modules 1–3: self-awareness, motivation, and the personal vision that
+          anchors your career trajectory.
+        </p>
+      </div>
+    </header>
+
+    <main
+      id="main"
+      class="max-w-4xl mx-auto px-6 py-12 md:py-16 space-y-16 md:space-y-20"
+    >
+      <!-- Module Progress -->
+      <div class="flex items-center gap-2 text-xs font-semibold text-slate-600">
+        <span>Module Progress</span>
+        <div class="flex gap-1">
+          <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+          <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+          <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+        </div>
+      </div>
+
+      <!-- Intro -->
+      <section class="section-fade">
+        <div class="card p-8 md:p-10">
+          <h2 class="text-3xl font-bold text-slate-900 mb-4">
+            Why begin with the self?
+          </h2>
+          <p class="text-slate-700 leading-relaxed mb-4">
+            Daniel Goleman's research on emotional intelligence is unambiguous
+            on one point: every interpersonal skill that distinguishes
+            high-performing leaders — empathy, conflict management, persuasion,
+            coaching — is built on a foundation of
+            <strong>accurate self-assessment</strong>. Leaders who cannot name
+            what they feel, what they want, and how they are perceived
+            consistently misread the rooms they walk into.
+          </p>
+          <p class="text-slate-700 leading-relaxed">
+            Pillar 1 develops that foundation in three layers: a model for
+            mapping what you know and don't know about yourself (Module 1), a
+            framework for identifying what actually drives your behaviour
+            (Module 2), and a writing exercise that converts both into a
+            personal mission and vision (Module 3).
+          </p>
+        </div>
+      </section>
+
+      <!-- Module 1 -->
+      <section class="section-fade" style="animation-delay: 0.05s">
+        <div class="mb-8">
+          <div class="inline-flex items-center gap-2 mb-3">
+            <span
+              class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-sm"
+              >1</span
+            >
+            <span
+              class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold tracking-widest uppercase"
+              >Module 1</span
+            >
+          </div>
+          <h2 class="text-4xl font-bold text-slate-900 mb-3">
+            The Johari Window
+          </h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded"
+          ></div>
+        </div>
+
+        <div class="prose prose-slate max-w-none mb-8">
+          <p class="text-slate-700 leading-relaxed">
+            Joseph Luft and Harrington Ingham introduced the Johari Window in
+            1955 as a simple 2×2 grid that crosses two axes:
+            <strong>what is known to the self</strong> and
+            <strong>what is known to others</strong>. The four resulting panes —
+            Open, Blind, Hidden, and Unknown — describe every piece of
+            information about you that exists in a working relationship.
+          </p>
+          <p class="text-slate-700 leading-relaxed">
+            The model is useful because it reframes self-awareness from a vague
+            aspiration into two concrete behaviours. You enlarge the
+            <em>Open</em> pane by <strong>asking for feedback</strong> (which
+            shrinks the Blind area) and by
+            <strong>appropriate self-disclosure</strong> (which shrinks the
+            Hidden area). Both behaviours are uncomfortable; both compound trust
+            on a team faster than any culture-deck slogan.
+          </p>
+          <p class="text-slate-700 leading-relaxed">
+            In a service environment this matters operationally. A team leader
+            with a large Blind pane will keep escalating the same coaching
+            message that agents have already privately rejected. An agent with a
+            large Hidden pane will absorb conflict with a customer until burnout
+            forces an unplanned absence. Both failure modes are predictable from
+            the window.
+          </p>
+        </div>
+
+        <p class="text-xs text-slate-500 mb-4 italic font-medium">
+          👆 Click any card below to flip it and see a reflection prompt you can
+          use this week.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div
+            class="flip h-64 cursor-pointer group"
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+          >
+            <div class="flip-inner">
+              <div
+                class="flip-face bg-white border border-slate-200 shadow-sm group-hover:shadow-md group-hover:border-blue-300 transition-all duration-300 rounded-2xl p-6 flex flex-col"
+              >
+                <h4 class="font-extrabold text-blue-700 text-xl mb-2">
+                  Open Self
+                </h4>
+                <p class="text-sm text-slate-600 leading-relaxed flex-grow">
+                  Known to you and to others. The shared working surface where
+                  collaboration happens.
+                </p>
+                <span
+                  class="mt-auto text-[11px] uppercase tracking-widest text-blue-600 font-bold flex items-center gap-1 group-hover:gap-2 transition-all"
+                  >Click to reflect &rarr;</span
+                >
+              </div>
+              <div
+                class="flip-face flip-back bg-gradient-to-br from-blue-600 to-blue-800 text-white shadow-lg rounded-2xl p-6 flex flex-col"
+              >
+                <h4 class="font-extrabold text-white text-xl mb-3">
+                  Reflection
+                </h4>
+                <p class="text-sm text-blue-50 leading-relaxed flex-grow">
+                  What strength do colleagues openly recognise in you? Pick one
+                  task this week where you will lean on it deliberately rather
+                  than out of habit.
+                </p>
+                <span
+                  class="mt-auto text-[11px] uppercase tracking-widest text-blue-300 font-bold"
+                  >Click to flip back</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flip h-64 cursor-pointer group"
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+          >
+            <div class="flip-inner">
+              <div
+                class="flip-face bg-white border border-slate-200 shadow-sm group-hover:shadow-md group-hover:border-slate-400 transition-all duration-300 rounded-2xl p-6 flex flex-col"
+              >
+                <h4 class="font-extrabold text-slate-800 text-xl mb-2">
+                  Blind Self
+                </h4>
+                <p class="text-sm text-slate-600 leading-relaxed flex-grow">
+                  Visible to others, invisible to you. Shrunk only by soliciting
+                  candid feedback.
+                </p>
+                <span
+                  class="mt-auto text-[11px] uppercase tracking-widest text-slate-500 font-bold flex items-center gap-1 group-hover:gap-2 transition-all"
+                  >Click to reflect &rarr;</span
+                >
+              </div>
+              <div
+                class="flip-face flip-back bg-gradient-to-br from-slate-700 to-slate-900 text-white shadow-lg rounded-2xl p-6 flex flex-col"
+              >
+                <h4 class="font-extrabold text-white text-xl mb-3">
+                  Reflection
+                </h4>
+                <p class="text-sm text-slate-200 leading-relaxed flex-grow">
+                  When did you last ask a peer the question, "What is one thing
+                  I do that makes me harder to work with?" Schedule that
+                  conversation this week.
+                </p>
+                <span
+                  class="mt-auto text-[11px] uppercase tracking-widest text-slate-400 font-bold"
+                  >Click to flip back</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flip h-64 cursor-pointer group"
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+          >
+            <div class="flip-inner">
+              <div
+                class="flip-face bg-white border border-slate-200 shadow-sm group-hover:shadow-md group-hover:border-slate-400 transition-all duration-300 rounded-2xl p-6 flex flex-col"
+              >
+                <h4 class="font-extrabold text-slate-800 text-xl mb-2">
+                  Hidden Self
+                </h4>
+                <p class="text-sm text-slate-600 leading-relaxed flex-grow">
+                  Known to you, withheld from others. Shrunk by appropriate
+                  self-disclosure.
+                </p>
+                <span
+                  class="mt-auto text-[11px] uppercase tracking-widest text-slate-500 font-bold flex items-center gap-1 group-hover:gap-2 transition-all"
+                  >Click to reflect &rarr;</span
+                >
+              </div>
+              <div
+                class="flip-face flip-back bg-gradient-to-br from-slate-700 to-slate-900 text-white shadow-lg rounded-2xl p-6 flex flex-col"
+              >
+                <h4 class="font-extrabold text-white text-xl mb-3">
+                  Reflection
+                </h4>
+                <p class="text-sm text-slate-200 leading-relaxed flex-grow">
+                  Name one professional concern you have not yet voiced to your
+                  team lead. Is the cost of disclosing it lower than the cost of
+                  carrying it alone?
+                </p>
+                <span
+                  class="mt-auto text-[11px] uppercase tracking-widest text-slate-400 font-bold"
+                  >Click to flip back</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flip h-64 cursor-pointer group"
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+          >
+            <div class="flip-inner">
+              <div
+                class="flip-face bg-white border border-slate-200 shadow-sm group-hover:shadow-md group-hover:border-blue-300 transition-all duration-300 rounded-2xl p-6 flex flex-col"
+              >
+                <h4 class="font-extrabold text-blue-700 text-xl mb-2">
+                  Unknown Self
+                </h4>
+                <p class="text-sm text-slate-600 leading-relaxed flex-grow">
+                  Latent capability neither you nor others have observed yet.
+                  Surfaced by stretch experiences.
+                </p>
+                <span
+                  class="mt-auto text-[11px] uppercase tracking-widest text-blue-400 font-bold flex items-center gap-1 group-hover:gap-2 transition-all"
+                  >Click to reflect &rarr;</span
+                >
+              </div>
+              <div
+                class="flip-face flip-back bg-gradient-to-br from-blue-700 to-indigo-900 text-white shadow-lg rounded-2xl p-6 flex flex-col"
+              >
+                <h4 class="font-extrabold text-white text-xl mb-3">
+                  Reflection
+                </h4>
+                <p class="text-sm text-blue-100 leading-relaxed flex-grow">
+                  What unfamiliar role — facilitator, analyst, presenter — could
+                  you volunteer for in the next quarter? The Unknown shrinks
+                  only when you are slightly out of your depth.
+                </p>
+                <span
+                  class="mt-auto text-[11px] uppercase tracking-widest text-blue-300 font-bold"
+                  >Click to flip back</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Module 2 -->
+      <section class="section-fade" style="animation-delay: 0.1s">
+        <div class="mb-8">
+          <span
+            class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold tracking-widest uppercase mb-2"
+            >Module 2</span
+          >
+          <h2 class="text-4xl font-extrabold text-slate-900 mb-2">
+            Drivers of Motivation
+          </h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded"
+          ></div>
+        </div>
+
+        <div class="prose prose-slate max-w-none mb-8">
+          <p class="text-slate-700 leading-relaxed">
+            A leader&rsquo;s primary operational task is to keep capable people
+            energised long enough to deliver. That requires a sharper vocabulary
+            than &ldquo;morale.&rdquo; Two complementary frameworks &mdash;
+            Frederick Herzberg&rsquo;s Two-Factor Theory and David
+            McClelland&rsquo;s Theory of Needs &mdash; do most of the heavy
+            lifting.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5 mb-8">
+          <div
+            class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm"
+          >
+            <h4 class="font-bold text-slate-900 mb-2">
+              Herzberg: hygiene vs. motivators
+            </h4>
+            <p class="text-sm text-slate-700 leading-relaxed mb-3">
+              Herzberg distinguished <strong>hygiene factors</strong> (salary,
+              working conditions, policies, supervision) from
+              <strong>motivators</strong> (achievement, recognition, the work
+              itself, growth).
+            </p>
+            <p class="text-sm text-slate-700 leading-relaxed">
+              The asymmetry is the point: removing a hygiene problem only takes
+              someone from dissatisfied to neutral. Genuine engagement comes
+              from motivators. A pay rise stops complaints; it does not buy
+              discretionary effort.
+            </p>
+          </div>
+          <div
+            class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm"
+          >
+            <h4 class="font-bold text-slate-900 mb-2">
+              McClelland: three acquired needs
+            </h4>
+            <p class="text-sm text-slate-700 leading-relaxed mb-3">
+              McClelland argued that adults are dominated by one of three
+              learned needs:
+            </p>
+            <ul class="text-sm text-slate-700 space-y-1.5 list-disc pl-5">
+              <li>
+                <strong>Achievement (nAch):</strong> mastering challenging,
+                measurable goals.
+              </li>
+              <li>
+                <strong>Affiliation (nAff):</strong> harmonious relationships
+                and belonging.
+              </li>
+              <li>
+                <strong>Power / Authority (nPow):</strong> influence over
+                outcomes and people.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-r-lg mb-10"
+        >
+          <p class="text-sm text-slate-700 leading-relaxed">
+            <strong>Practical synthesis:</strong> use Herzberg to
+            <em>remove friction</em> (fix the schedule, fix the tooling, stop
+            micro-managing) and use McClelland to <em>assign work</em> (hand the
+            toughest queue to the achievement-driven agent, the buddy programme
+            to the affiliation-driven agent, the project lead role to the
+            power-driven agent). Misalignment between need and assignment is one
+            of the most common &mdash; and most fixable &mdash; sources of
+            attrition in the floor.
+          </p>
+        </div>
+
+        <div
+          class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm"
+        >
+          <h3 class="text-2xl font-bold mb-1">
+            Knowledge Check &middot; Motivator Match
+          </h3>
+          <p class="text-slate-500 text-sm mb-6">
+            Read each quote and pick the McClelland need it most clearly
+            reflects.
+          </p>
+          <div id="motiv-quiz" class="space-y-6"></div>
+          <div class="mt-6 flex items-center justify-between gap-4">
+            <p id="motiv-score" class="text-sm font-semibold text-slate-600">
+              Score: 0 / 3
+            </p>
+            <button
+              id="motiv-reset"
+              class="btn-ghost text-xs font-semibold text-slate-500 hover:text-blue-700 underline underline-offset-4 px-0 h-auto"
+            >
+              Reset quiz
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Module 3 -->
+      <section class="section-fade" style="animation-delay: 0.2s">
+        <div class="mb-8">
+          <span
+            class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold tracking-widest uppercase mb-2"
+            >Module 3</span
+          >
+          <h2 class="text-4xl font-extrabold text-slate-900 mb-2">
+            Personal Vision &amp; Mission
+          </h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded"
+          ></div>
+        </div>
+
+        <div class="prose prose-slate max-w-none mb-6">
+          <p class="text-slate-700 leading-relaxed">
+            A <strong>mission</strong> describes what you do today and the
+            standard you hold yourself to while doing it; it answers the
+            question, &ldquo;If a colleague described my work this quarter, what
+            would I want them to be able to say?&rdquo; A
+            <strong>vision</strong> describes the future state your present work
+            is in service of; it answers, &ldquo;If I keep operating at this
+            standard for five years, where do I land?&rdquo;
+          </p>
+          <p class="text-slate-700 leading-relaxed">
+            Written well, the two statements act as a personal filter. New
+            opportunities can be evaluated against them in seconds: this
+            assignment moves me toward the vision, that one does not. Without
+            them, every new request looks equally urgent, which is how careers
+            drift.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div
+            class="bg-gradient-to-br from-blue-600 to-blue-700 text-white p-8 rounded-2xl shadow-lg border border-blue-500"
+          >
+            <h3 class="font-bold text-2xl mb-2">Mission &mdash; the present</h3>
+            <p class="text-blue-100 text-sm mb-5">
+              Defines your purpose and the standard you hold today.
+            </p>
+            <div class="bg-white/10 p-4 rounded-lg border border-blue-300/30">
+              <p class="italic text-blue-50 text-sm">
+                &ldquo;To deliver excellent service by ensuring prompt
+                assistance, technical accuracy, and a tone that makes every
+                customer feel taken seriously.&rdquo;
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-gradient-to-br from-indigo-600 to-indigo-700 text-white p-8 rounded-2xl shadow-lg border border-indigo-500"
+          >
+            <h3 class="font-bold text-2xl mb-2">Vision &mdash; the future</h3>
+            <p class="text-indigo-100 text-sm mb-5">
+              Extends the mission to an ideal future state.
+            </p>
+            <div class="bg-white/10 p-4 rounded-lg border border-indigo-300/30">
+              <p class="italic text-indigo-50 text-sm">
+                &ldquo;To become a recognised leader in the IT&#8209;BPM sector
+                who is trusted to bridge technology and human connection across
+                cultures.&rdquo;
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-white border border-slate-200 rounded-xl p-6">
+          <h4 class="font-bold text-slate-900 mb-2">A drafting checklist</h4>
+          <ul class="text-sm text-slate-700 space-y-2 list-disc pl-5">
+            <li>
+              Write in the first person and the present tense, even for the
+              vision.
+            </li>
+            <li>
+              Name the standard, not just the activity (&ldquo;deliver clear
+              technical answers&rdquo; beats &ldquo;answer tickets&rdquo;).
+            </li>
+            <li>
+              Keep each statement under thirty words. If it doesn&rsquo;t fit on
+              a sticky note, you won&rsquo;t use it.
+            </li>
+            <li>
+              Re-read it every Monday morning for a month. Edit until it stops
+              feeling aspirational and starts feeling accurate.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      try {
+        const k = "scp_progress_v1";
+        const s = JSON.parse(localStorage.getItem(k)) || {};
+        s["inner-leader"] = true;
+        localStorage.setItem(k, JSON.stringify(s));
+      } catch (e) {}
+
+      document.querySelectorAll(".flip").forEach((el) => {
+        const toggle = () => {
+          el.classList.toggle("is-flipped");
+          el.setAttribute("aria-pressed", el.classList.contains("is-flipped"));
+        };
+        el.addEventListener("click", toggle);
+        el.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggle();
+          }
+        });
+      });
+
+      const QUIZ = [
+        {
+          q: "\u201CI live for hitting the toughest KPI on the floor \u2014 give me the hardest ticket queue.\u201D",
+          a: "achievement",
+          choices: ["achievement", "authority", "affiliation"],
+        },
+        {
+          q: "\u201CWhat I love most is mentoring the new hires and feeling like one tight team.\u201D",
+          a: "affiliation",
+          choices: ["achievement", "authority", "affiliation"],
+        },
+        {
+          q: "\u201CI want to lead the program \u2014 call the shots and shape how the account runs.\u201D",
+          a: "authority",
+          choices: ["achievement", "authority", "affiliation"],
+        },
+      ];
+      const LABELS = {
+        achievement: "Achievement",
+        authority: "Authority",
+        affiliation: "Affiliation",
+      };
+      const root = document.getElementById("motiv-quiz");
+      const scoreEl = document.getElementById("motiv-score");
+      const state = QUIZ.map(() => null);
+
+      function render() {
+        root.innerHTML = "";
+        QUIZ.forEach((item, i) => {
+          const block = document.createElement("div");
+          // Upgraded container to match the premium 2xl rounded cards
+          block.className =
+            "bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow mb-4";
+          block.innerHTML =
+            '<p class="text-slate-800 font-medium mb-5 text-lg">' +
+            item.q +
+            "</p>" +
+            '<div class="grid sm:grid-cols-3 gap-3" data-i="' +
+            i +
+            '"></div>' +
+            '<p class="mt-4 text-sm font-semibold hidden" data-feedback></p>';
+
+          const opts = block.querySelector("[data-i]");
+          item.choices.forEach((c) => {
+            const b = document.createElement("button");
+
+            // Added 'btn-quiz' to bypass the aggressive black styling, plus premium utility classes
+            b.className =
+              "btn-quiz w-full border-2 border-slate-200 text-slate-700 font-semibold py-3 px-4 rounded-xl hover:border-blue-500 hover:text-blue-700 hover:bg-blue-50 transition-all text-sm bg-white";
+            b.textContent = LABELS[c];
+            b.dataset.choice = c;
+
+            b.addEventListener("click", () => {
+              state[i] = c;
+              render();
+            });
+            opts.appendChild(b);
+          });
+
+          if (state[i]) {
+            opts.querySelectorAll("button").forEach((bb) => {
+              bb.disabled = true;
+              // Reset the base classes so the correct/wrong animations pop perfectly
+              bb.className =
+                "btn-quiz w-full border-2 border-slate-200 text-slate-400 font-semibold py-3 px-4 rounded-xl text-sm bg-slate-50 cursor-not-allowed";
+
+              if (bb.dataset.choice === item.a)
+                bb.classList.add("quiz-correct");
+              if (bb.dataset.choice === state[i] && state[i] !== item.a)
+                bb.classList.add("quiz-wrong");
+            });
+
+            const fb = block.querySelector("[data-feedback]");
+            fb.classList.remove("hidden");
+            fb.classList.add(
+              state[i] === item.a ? "text-emerald-600" : "text-red-600",
+            );
+            fb.textContent =
+              state[i] === item.a
+                ? "✓ Correct — this signals " + LABELS[item.a] + "."
+                : "✗ Closer fit is " + LABELS[item.a] + ".";
+          }
+          root.appendChild(block);
+        });
+        const correct = state.filter((s, i) => s === QUIZ[i].a).length;
+        scoreEl.textContent = "Score: " + correct + " / " + QUIZ.length;
+      }
+      document.getElementById("motiv-reset").addEventListener("click", () => {
+        for (let i = 0; i < state.length; i++) state[i] = null;
+        render();
+      });
+      render();
+    </script>
+  </body>
+</html>

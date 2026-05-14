@@ -1,0 +1,718 @@
+/**
+ * Premium Design System - Professional Enhancement Layer
+ * Refined for high-end interfaces (Stripe, Linear, Vercel quality)
+ * 
+ * Import AFTER other CSS files to override and refine
+ * Features: refined spacing, sophisticated motion, clean visual hierarchy
+ */
+
+/* ======================================== */
+/* ENHANCED TYPOGRAPHY & SPACING SYSTEM */
+/* ======================================== */
+
+:root {
+  /* Enhanced letter-spacing for better legibility at all sizes */
+  --letter-micro: -0.01em; /* Tighter for large headlines */
+  --letter-tight: -0.005em;
+  --letter-normal: 0;
+  --letter-wide: 0.03em; /* Refined for labels */
+  --letter-wider: 0.06em;
+  --letter-widest: 0.12em; /* For small caps */
+
+  /* Enhanced shadows - more sophisticated */
+  --shadow-none: 0 0 0 transparent;
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  --shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
+
+  /* Enhanced elevation system */
+  --elevation-1: var(--shadow-xs);
+  --elevation-2: var(--shadow-sm);
+  --elevation-3: var(--shadow-md);
+  --elevation-4: var(--shadow-lg);
+
+  /* Premium borders */
+  --border-thin: 0.5px;
+  --border-light: 1px;
+  --border-medium: 1.5px;
+
+  /* Refined motion timing */
+  --motion-fast: 0.1s;
+  --motion-snap: 0.15s;
+  --motion-quick: 0.2s;
+  --motion-normal: 0.3s;
+  --motion-smooth: 0.4s;
+  --motion-subtle: 0.5s;
+  --motion-emphasis: 0.6s;
+  --motion-slow: 0.8s;
+
+  /* Easing functions for premium feel */
+  --ease-in-quad: cubic-bezier(0.11, 0, 0.5, 0);
+  --ease-out-quad: cubic-bezier(0.5, 1, 0.89, 1);
+  --ease-in-out-quad: cubic-bezier(0.45, 0, 0.55, 1);
+  --ease-in-cubic: cubic-bezier(0.32, 0, 0.67, 0);
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-linear: linear;
+
+  /* Refined opacity scale */
+  --opacity-disabled: 0.5;
+  --opacity-hover: 0.8;
+  --opacity-focus: 0.9;
+  --opacity-active: 1;
+}
+
+/* ======================================== */
+/* REFINED TYPOGRAPHY HIERARCHY */
+/* ======================================== */
+
+/* Page title - hero level */
+h1 {
+  font-size: var(--type-6xl);
+  line-height: 1.1;
+  letter-spacing: var(--letter-micro);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-8) 0;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: var(--type-4xl);
+  }
+}
+
+/* Section heading */
+h2 {
+  font-size: var(--type-3xl);
+  line-height: 1.2;
+  letter-spacing: var(--letter-tight);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-6) 0;
+}
+
+/* Subsection */
+h3 {
+  font-size: var(--type-xl);
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-4) 0;
+}
+
+/* Card/module heading */
+h4 {
+  font-size: var(--type-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-2) 0;
+}
+
+/* Body text with premium line-height */
+p {
+  font-size: var(--type-base);
+  line-height: 1.65;
+  letter-spacing: 0.3px;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-4) 0;
+}
+
+/* Dense paragraph for cards */
+.text-dense {
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+/* Premium label style */
+.label,
+label {
+  display: block;
+  font-size: var(--type-sm);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+/* ======================================== */
+/* REFINED COMPONENT STYLES */
+/* ======================================== */
+
+/* Premium card - engineered aesthetics */
+.card {
+  background: var(--color-bg-surface);
+  border: var(--border-light) solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--space-6);
+  box-shadow: var(--elevation-1);
+  transition: all var(--motion-quick) var(--ease-out-cubic);
+  position: relative;
+}
+
+.card:hover {
+  border-color: var(--color-border-dark);
+  box-shadow: var(--elevation-2);
+}
+
+.card:focus-within {
+  box-shadow: var(--elevation-3);
+  border-color: var(--color-primary);
+}
+
+/* Compact card variant */
+.card-compact {
+  padding: var(--space-4);
+}
+
+/* Card with top accent */
+.card-accented::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
+  border-radius: 8px 8px 0 0;
+}
+
+.card-accented {
+  padding-top: calc(var(--space-6) + 3px);
+}
+
+/* Refined button styles */
+.btn,
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-size: var(--type-sm);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  padding: 10px 16px;
+  height: 40px;
+  border: var(--border-light) solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  transition: all var(--motion-snap) var(--ease-out-cubic);
+  position: relative;
+  overflow: hidden;
+}
+
+button:disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+/* Button variants */
+.btn-primary,
+button:not([class*="btn-"]) {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover:not(:disabled),
+button:not([class*="btn-"]):hover:not(:disabled) {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.2);
+}
+
+.btn-primary:active:not(:disabled),
+button:not([class*="btn-"]):active:not(:disabled) {
+  transform: translateY(0.5px);
+}
+
+.btn-secondary {
+  background: var(--color-bg-surface);
+  color: var(--color-primary);
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--color-primary-lighter);
+  border-color: var(--color-primary);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: transparent;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--color-primary-lighter);
+}
+
+/* Button sizes */
+.btn-sm {
+  padding: 6px 12px;
+  height: 32px;
+  font-size: var(--type-xs);
+}
+
+.btn-lg {
+  padding: 14px 24px;
+  height: 48px;
+  font-size: var(--type-base);
+}
+
+/* Refined badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--type-xs);
+  font-weight: 600;
+  letter-spacing: var(--letter-wide);
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: var(--color-primary-lighter);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Divider - premium style */
+.divider {
+  height: 2px;
+  width: 40px;
+  background: linear-gradient(90deg, var(--color-primary), transparent);
+  border-radius: 1px;
+  opacity: 0.6;
+}
+
+/* ======================================== */
+/* PREMIUM SPACING & LAYOUT */
+/* ======================================== */
+
+/* Refined grid layouts */
+.grid-cols-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-8);
+}
+
+@media (max-width: 640px) {
+  .grid-cols-auto {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section spacing - generous vertical rhythm */
+main > section {
+  margin-bottom: var(--space-20);
+}
+
+main > section:last-child {
+  margin-bottom: var(--space-16);
+}
+
+/* Refined spacing utilities */
+.space-balanced {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.space-compact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.space-generous {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* ======================================== */
+/* PREMIUM INTERACTIVE ELEMENTS */
+/* ======================================== */
+
+/* Flip card - refined */
+.flip {
+  perspective: 1200px;
+  cursor: pointer;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.flip:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform var(--motion-emphasis) var(--ease-out-cubic);
+  transform-style: preserve-3d;
+}
+
+.flip.is-flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border: var(--border-light) solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg-surface);
+  box-shadow: var(--elevation-2);
+  transition: all var(--motion-quick) var(--ease-out-cubic);
+}
+
+.flip:hover .flip-face {
+  box-shadow: var(--elevation-3);
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+/* Quiz cells - refined */
+.quiz-cell,
+.drill-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  min-height: 48px;
+  font-weight: 600;
+  font-size: var(--type-sm);
+  border: var(--border-light) solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all var(--motion-snap) var(--ease-out-cubic);
+  user-select: none;
+}
+
+.quiz-cell:hover:not(:disabled),
+.drill-cell:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  background: var(--color-primary-lighter);
+  box-shadow: var(--elevation-2);
+}
+
+.quiz-cell:focus-visible,
+.drill-cell:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.quiz-correct {
+  background: #ecfdf5;
+  border-color: #10b981;
+  color: #065f46;
+  animation: correctPulse var(--motion-normal) var(--ease-out-cubic);
+}
+
+.quiz-wrong {
+  background: #fef2f2;
+  border-color: #ef4444;
+  color: #991b1b;
+  animation: wrongShake var(--motion-normal) var(--ease-out-cubic);
+}
+
+/* ======================================== */
+/* REFINED ANIMATIONS */
+/* ======================================== */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes correctPulse {
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes wrongShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Page enter animation */
+.section-fade {
+  animation: slideDown var(--motion-emphasis) var(--ease-out-cubic) both;
+}
+
+/* Staggered section entrances */
+.section-fade:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.section-fade:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.section-fade:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.section-fade:nth-child(n + 4) {
+  animation-delay: 0.24s;
+}
+
+/* ======================================== */
+/* PREMIUM NAVIGATION */
+/* ======================================== */
+
+nav {
+  background: var(--color-bg-surface);
+  border-bottom: var(--border-light) solid var(--color-border);
+  box-shadow: var(--elevation-1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+nav a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: var(--type-sm);
+  transition: all var(--motion-quick) var(--ease-out-cubic);
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width var(--motion-quick) var(--ease-out-cubic);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Header section - premium treatment */
+header {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary) 100%
+  );
+  color: white;
+  padding: var(--space-16) var(--space-6);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: var(--space-12) var(--space-6);
+  }
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+header h1 {
+  color: white;
+  margin-bottom: var(--space-4);
+  letter-spacing: var(--letter-tight);
+}
+
+header p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--type-lg);
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* ======================================== */
+/* RESPONSIVE REFINEMENTS */
+/* ======================================== */
+
+@media (max-width: 768px) {
+  :root {
+    --space-section-gap: var(--space-12);
+  }
+
+  h1 {
+    font-size: var(--type-4xl);
+  }
+
+  h2 {
+    font-size: var(--type-2xl);
+  }
+
+  .card {
+    padding: var(--space-5);
+  }
+
+  main > section {
+    margin-bottom: var(--space-12);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --space-card-padding: var(--space-4);
+  }
+
+  h1 {
+    font-size: var(--type-3xl);
+  }
+
+  .btn {
+    padding: 8px 12px;
+    height: 36px;
+    font-size: var(--type-xs);
+  }
+
+  .card {
+    padding: var(--space-4);
+  }
+}
+
+/* ======================================== */
+/* REDUCED MOTION SUPPORT */
+/* ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ======================================== */
+/* FOCUS & ACCESSIBILITY */
+/* ======================================== */
+
+*:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+a:focus-visible {
+  border-radius: 2px;
+}
+
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* ======================================== */
+/* PRINT STYLES */
+/* ======================================== */
+
+@media print {
+  nav,
+  header,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}

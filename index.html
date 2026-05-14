@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="en" class="antialiased text-slate-900 bg-slate-50">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Service Culture Playbook</title>
+    <meta
+      name="description"
+      content="An interactive playbook for personal leadership and global IT-BPM service excellence."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', "sans-serif"],
+            },
+            colors: {
+              brand: {
+                50: "#f5f3ff",
+                100: "#ede9fe",
+                500: "#8b5cf6",
+                600: "#7c3aed",
+                900: "#4c1d95",
+                950: "#2e1065",
+              },
+              surface: "#ffffff",
+            },
+            boxShadow: {
+              premium:
+                "0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 12px 20px -4px rgba(0, 0, 0, 0.04)",
+              "premium-hover":
+                "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 25px 30px -5px rgba(0, 0, 0, 0.06)",
+            },
+            transitionTimingFunction: {
+              premium: "cubic-bezier(0.16, 1, 0.3, 1)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .premium-card {
+        transition:
+          transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+          border-color 0.4s ease,
+          background-color 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .premium-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 100%
+        );
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      .premium-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.15);
+      }
+      .premium-card:hover::before {
+        opacity: 1;
+      }
+      .premium-card.is-locked {
+        opacity: 0.6;
+        filter: grayscale(100%);
+        pointer-events: none;
+      }
+
+      .hero-grid {
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 50%,
+          #0f172a 100%
+        );
+        position: relative;
+        background-size: 40px 40px;
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px
+          );
+        mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      .circular-progress {
+        position: relative;
+        width: 140px;
+        height: 140px;
+        margin: 0 auto;
+      }
+      .progress-circle {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+      }
+      .progress-circle svg {
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+      }
+      .progress-circle-bg {
+        fill: none;
+        stroke: #e2e8f0;
+        stroke-width: 8;
+        stroke-linecap: round;
+      }
+      .progress-circle-fill {
+        fill: none;
+        stroke: url(#progressGradient);
+        stroke-width: 8;
+        stroke-linecap: round;
+        transition: stroke-dashoffset 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .progress-text {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .progress-percent {
+        font-size: 28px;
+        font-weight: 700;
+        background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .progress-label {
+        font-size: 11px;
+        font-weight: 600;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out both;
+      }
+      .card-stagger:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .card-stagger:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .card-stagger:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .card-stagger:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .card-stagger:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+
+      .pillar-blue {
+        --pillar-color: #3b82f6;
+      }
+      .pillar-emerald {
+        --pillar-color: #10b981;
+      }
+      .pillar-purple {
+        --pillar-color: #a855f7;
+      }
+      .pillar-orange {
+        --pillar-color: #f97316;
+      }
+      .pillar-slate {
+        --pillar-color: #475569;
+      }
+
+      .pillar-accent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--pillar-color, #8b5cf6) 0%,
+          transparent 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .premium-card:hover .pillar-accent {
+        opacity: 1;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      @media print {
+        body > *:not(#certificate-modal) {
+          display: none !important;
+        }
+        #certificate-modal {
+          display: flex !important;
+          position: absolute;
+          inset: 0;
+          background: white;
+          padding: 2rem;
+          align-items: center;
+          justify-content: center;
+        }
+        .no-print {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="flex flex-col min-h-screen selection:bg-brand-500 selection:text-white relative"
+  >
+    <div
+      id="certificate-modal"
+      class="hidden fixed inset-0 z-[100] bg-slate-900/50 backdrop-blur-sm items-center justify-center p-4 opacity-0 transition-opacity duration-300"
+    >
+      <div
+        class="bg-white max-w-3xl w-full rounded-2xl shadow-2xl overflow-hidden relative transform scale-95 transition-transform duration-300"
+        id="certificate-content"
+      >
+        <button
+          id="close-cert"
+          class="no-print absolute top-4 right-4 text-slate-400 hover:text-slate-600 bg-slate-100 rounded-full p-2"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+        <div
+          class="p-12 text-center border-8 border-double border-slate-100 m-4 rounded-xl relative overflow-hidden"
+        >
+          <div
+            class="absolute -top-24 -right-24 w-48 h-48 bg-brand-50 rounded-full blur-3xl"
+          ></div>
+          <div
+            class="absolute -bottom-24 -left-24 w-48 h-48 bg-emerald-50 rounded-full blur-3xl"
+          ></div>
+          <h4
+            class="text-brand-600 font-bold tracking-[0.2em] uppercase text-sm mb-6 relative z-10"
+          >
+            Service Management Program
+          </h4>
+          <h2
+            class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 font-serif relative z-10"
+          >
+            Certificate of Completion
+          </h2>
+          <p class="text-slate-600 mb-8 max-w-lg mx-auto relative z-10">
+            This certifies that the user has successfully completed all
+            foundational modules of the Service Culture Playbook, demonstrating
+            competence in self-mastery, interpersonal communication, industry
+            standards, and global perspectives.
+          </p>
+          <div class="flex justify-center gap-12 items-end mt-12 relative z-10">
+            <div class="text-left">
+              <div
+                class="border-b-2 border-slate-300 w-32 mb-2 pb-1 text-center font-mono text-sm text-slate-800"
+                id="cert-date"
+              ></div>
+              <p
+                class="text-xs uppercase tracking-widest text-slate-400 font-bold text-center"
+              >
+                Date Completed
+              </p>
+            </div>
+            <div
+              class="w-24 h-24 bg-brand-600 rounded-full flex items-center justify-center shadow-lg border-4 border-white"
+            >
+              <svg
+                class="w-10 h-10 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <div class="text-right">
+              <div
+                class="border-b-2 border-slate-300 w-32 mb-2 pb-1 text-center font-mono text-sm text-slate-800"
+              >
+                Verified
+              </div>
+              <p
+                class="text-xs uppercase tracking-widest text-slate-400 font-bold text-center"
+              >
+                SMP Protocol
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-slate-50 px-6 py-4 flex justify-end gap-3 no-print">
+          <button
+            onclick="window.print()"
+            class="btn-primary text-sm font-semibold px-5 py-2.5 rounded-lg bg-brand-600 text-white hover:bg-brand-700 transition shadow-sm flex items-center gap-2"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2-2v4h10z"
+              ></path>
+            </svg>
+            Print Certificate
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <header
+      class="relative bg-slate-950 text-white pt-28 pb-40 overflow-hidden"
+    >
+      <div class="absolute inset-0 hero-grid"></div>
+      <div
+        class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand-500 to-transparent opacity-50"
+      ></div>
+      <div class="relative max-w-6xl mx-auto px-6 lg:px-8 text-center">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-brand-100 text-xs font-semibold tracking-wide uppercase mb-8"
+        >
+          <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+          Service Management Program
+        </div>
+        <h1
+          class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]"
+        >
+          Mastering Service <br class="hidden sm:block" />
+          <span class="bg-clip-text bg-gradient-to-r from-brand-400 to-blue-400"
+            >Culture</span
+          >
+        </h1>
+        <p
+          class="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto font-medium leading-relaxed"
+        >
+          A definitive playbook for developing personal leadership excellence
+          and mastering global IT-BPM standards.
+        </p>
+      </div>
+    </header>
+
+    <main
+      class="max-w-6xl mx-auto px-6 lg:px-8 py-12 flex-grow w-full -mt-24 relative z-10"
+    >
+      <section
+        class="mb-12 bg-white rounded-2xl border border-slate-200 shadow-premium p-8 md:p-10"
+      >
+        <div
+          class="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-8"
+        >
+          <div>
+            <h2
+              class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 mb-2"
+            >
+              Your Learning Journey
+            </h2>
+            <p class="text-sm text-slate-500 font-medium" id="progress-label">
+              Start your first pillar to begin tracking progress
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-3">
+            <button
+              id="resume-btn"
+              class="hidden text-sm font-semibold px-5 py-2.5 rounded-lg bg-brand-600 text-white hover:bg-brand-700 transition shadow-sm"
+            >
+              Resume Journey &rarr;
+            </button>
+            <button
+              id="cert-btn"
+              class="hidden text-sm font-semibold px-5 py-2.5 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition shadow-sm"
+            >
+              View Certificate
+            </button>
+            <button
+              id="reset-progress"
+              class="text-sm font-semibold text-slate-400 hover:text-slate-700 transition-colors px-4 py-2.5 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-200"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h3
+              class="text-xs font-bold tracking-widest uppercase text-slate-500 mb-4"
+            >
+              Progress Overview
+            </h3>
+            <div class="circular-progress">
+              <div class="progress-circle">
+                <svg viewBox="0 0 140 140" style="overflow: visible">
+                  <defs>
+                    <linearGradient
+                      id="progressGradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop
+                        offset="0%"
+                        style="stop-color: #8b5cf6; stop-opacity: 1"
+                      />
+                      <stop
+                        offset="100%"
+                        style="stop-color: #6366f1; stop-opacity: 1"
+                      />
+                    </linearGradient>
+                  </defs>
+                  <circle
+                    class="progress-circle-bg"
+                    cx="70"
+                    cy="70"
+                    r="62"
+                  ></circle>
+                  <circle
+                    class="progress-circle-fill"
+                    cx="70"
+                    cy="70"
+                    r="62"
+                    id="progress-circle-fill"
+                    style="stroke-dasharray: 389.56; stroke-dashoffset: 389.56"
+                  ></circle>
+                </svg>
+              </div>
+              <div class="progress-text">
+                <div class="progress-percent" id="progress-percent">0%</div>
+                <div class="progress-label">Complete</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3
+              class="text-xs font-bold tracking-widest uppercase text-slate-500 mb-4"
+            >
+              Module Status
+            </h3>
+            <div class="space-y-3">
+              <div
+                class="flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    data-dot="inner-leader"
+                    class="w-3 h-3 rounded-full bg-slate-200 ring-2 ring-slate-100"
+                  ></span>
+                  <span class="text-sm font-medium text-slate-700"
+                    >Inner Leader</span
+                  >
+                </div>
+                <span class="text-xs font-semibold text-slate-400"
+                  >Pillar 1</span
+                >
+              </div>
+              <div
+                class="flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    data-dot="connecting-others"
+                    class="w-3 h-3 rounded-full bg-slate-200 ring-2 ring-slate-100"
+                  ></span>
+                  <span class="text-sm font-medium text-slate-700"
+                    >Connecting</span
+                  >
+                </div>
+                <span class="text-xs font-semibold text-slate-400"
+                  >Pillar 2</span
+                >
+              </div>
+              <div
+                class="flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    data-dot="industry-excellence"
+                    class="w-3 h-3 rounded-full bg-slate-200 ring-2 ring-slate-100"
+                  ></span>
+                  <span class="text-sm font-medium text-slate-700"
+                    >IT-BPM Excellence</span
+                  >
+                </div>
+                <span class="text-xs font-semibold text-slate-400"
+                  >Pillar 3</span
+                >
+              </div>
+              <div
+                class="flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    data-dot="global-perspectives"
+                    class="w-3 h-3 rounded-full bg-slate-200 ring-2 ring-slate-100"
+                  ></span>
+                  <span class="text-sm font-medium text-slate-700"
+                    >Global Perspectives</span
+                  >
+                </div>
+                <span class="text-xs font-semibold text-slate-400"
+                  >Pillar 4</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="mb-16 grid md:grid-cols-12 gap-8 items-start animate-fade-in-up"
+      >
+        <div class="md:col-span-8">
+          <h2
+            class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6"
+          >
+            Four Pillars of Service Excellence
+          </h2>
+          <div class="space-y-4 text-slate-600 leading-relaxed">
+            <p>
+              The IT-BPM industry competes globally on the execution of
+              cognitive work. Technology, scripts, and SLAs are the baseline.
+              What separates a functional provider from a category leader is a
+              culture where individuals reason clearly about themselves,
+              communicate skillfully, and apply rigorous global standards.
+            </p>
+          </div>
+        </div>
+        <div
+          class="md:col-span-4 bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl border border-indigo-200 p-6"
+        >
+          <h3
+            class="font-bold text-sm tracking-widest uppercase text-indigo-900 mb-4 flex items-center gap-2"
+          >
+            <span class="w-2 h-2 rounded-full bg-indigo-500"></span> Getting
+            Started
+          </h3>
+          <ul class="space-y-4 text-sm text-slate-700">
+            <li class="flex gap-3">
+              <span class="text-indigo-600 font-bold min-w-6">01</span
+              ><span>Read sequentially—frameworks build on each other.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-indigo-600 font-bold min-w-6">02</span
+              ><span>Do not skip the interactive checkpoints.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-indigo-600 font-bold min-w-6">03</span
+              ><span>Unlock the Capstone by finishing all modules.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+        <a
+          href="public/inner-leader.html"
+          data-pillar="inner-leader"
+          class="group block bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 border border-slate-200 premium-card card-stagger relative overflow-hidden hover:border-blue-300"
+        >
+          <div class="pillar-accent pillar-blue"></div>
+          <div class="flex justify-between items-start mb-6">
+            <div class="flex items-center gap-2">
+              <div
+                class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-lg"
+              >
+                1
+              </div>
+              <span
+                class="text-xs font-bold tracking-widest uppercase text-blue-600"
+                >Pillar 1</span
+              >
+            </div>
+            <span
+              data-badge
+              class="hidden text-[10px] font-bold tracking-widest uppercase bg-blue-100 text-blue-700 px-2.5 py-1 rounded-full"
+              >Completed</span
+            >
+          </div>
+          <h3 class="text-2xl font-bold mb-2 text-slate-900 tracking-tight">
+            The Inner Leader
+          </h3>
+          <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+            Map your operational blind spots using the Johari Window, decode
+            genuine workplace motivators, and draft a mission statement.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span
+              class="text-[10px] font-bold tracking-widest uppercase bg-white/60 border border-slate-200 text-slate-500 px-2.5 py-1 rounded-full"
+              >Est. 15 min</span
+            >
+            <span
+              class="text-[10px] font-bold tracking-widest uppercase bg-white/60 border border-slate-200 text-slate-500 px-2.5 py-1 rounded-full"
+              >Theory</span
+            >
+          </div>
+          <div
+            class="inline-flex items-center text-sm font-semibold text-blue-600 group-hover:text-blue-700 transition-colors"
+          >
+            Start Module
+            <span class="ml-2 group-hover:translate-x-1 transition-transform"
+              >&rarr;</span
+            >
+          </div>
+        </a>
+
+        <a
+          href="public/connecting-others.html"
+          data-pillar="connecting-others"
+          class="group block bg-gradient-to-br from-slate-50 to-emerald-50 rounded-2xl p-8 border border-slate-200 premium-card card-stagger relative overflow-hidden hover:border-emerald-300"
+        >
+          <div class="pillar-accent pillar-emerald"></div>
+          <div class="flex justify-between items-start mb-6">
+            <div class="flex items-center gap-2">
+              <div
+                class="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-lg"
+              >
+                2
+              </div>
+              <span
+                class="text-xs font-bold tracking-widest uppercase text-emerald-600"
+                >Pillar 2</span
+              >
+            </div>
+            <span
+              data-badge
+              class="hidden text-[10px] font-bold tracking-widest uppercase bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full"
+              >Completed</span
+            >
+          </div>
+          <h3 class="text-2xl font-bold mb-2 text-slate-900 tracking-tight">
+            Connecting with Others
+          </h3>
+          <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+            Translate self-awareness into influence. Practice empathy, dismantle
+            blockers, and structure professional 1:1s with the GROW model.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span
+              class="text-[10px] font-bold tracking-widest uppercase bg-white/60 border border-slate-200 text-slate-500 px-2.5 py-1 rounded-full"
+              >Est. 20 min</span
+            >
+            <span
+              class="text-[10px] font-bold tracking-widest uppercase bg-white/60 border border-slate-200 text-slate-500 px-2.5 py-1 rounded-full"
+              >Generator</span
+            >
+          </div>
+          <div
+            class="inline-flex items-center text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 transition-colors"
+          >
+            Start Module
+            <span class="ml-2 group-hover:translate-x-1 transition-transform"
+              >&rarr;</span
+            >
+          </div>
+        </a>
+
+        <a
+          href="public/industry-excellence.html"
+          data-pillar="industry-excellence"
+          class="group block bg-gradient-to-br from-slate-50 to-purple-50 rounded-2xl p-8 border border-slate-200 premium-card card-stagger relative overflow-hidden hover:border-purple-300"
+        >
+          <div class="pillar-accent pillar-purple"></div>
+          <div class="flex justify-between items-start mb-6">
+            <div class="flex items-center gap-2">
+              <div
+                class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg"
+              >
+                3
+              </div>
+              <span
+                class="text-xs font-bold tracking-widest uppercase text-purple-600"
+                >Pillar 3</span
+              >
+            </div>
+            <span
+              data-badge
+              class="hidden text-[10px] font-bold tracking-widest uppercase bg-purple-100 text-purple-700 px-2.5 py-1 rounded-full"
+              >Completed</span
+            >
+          </div>
+          <h3 class="text-2xl font-bold mb-2 text-slate-900 tracking-tight">
+            IT-BPM Excellence
+          </h3>
+          <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+            Master the competencies governing hiring and promotion. Execute
+            perceptual speed drills and apply rigorous SMART frameworks.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span
+              class="text-[10px] font-bold tracking-widest uppercase bg-white/60 border border-slate-200 text-slate-500 px-2.5 py-1 rounded-full"
+              >Est. 15 min</span
+            >
+            <span
+              class="text-[10px] font-bold tracking-widest uppercase bg-white/60 border border-slate-200 text-slate-500 px-2.5 py-1 rounded-full"
+              >Interactive</span
+            >
+          </div>
+          <div
+            class="inline-flex items-center text-sm font-semibold text-purple-600 group-hover:text-purple-700 transition-colors"
+          >
+            Start Module
+            <span class="ml-2 group-hover:translate-x-1 transition-transform"
+              >&rarr;</span
+            >
+          </div>
+        </a>
+
+        <a
+          href="public/global-perspectives.html"
+          data-pillar="global-perspectives"
+          class="group block bg-gradient-to-br from-slate-50 to-orange-50 rounded-2xl p-8 border border-slate-200 premium-card card-stagger relative overflow-hidden hover:border-orange-300"
+        >
+          <div class="pillar-accent pillar-orange"></div>
+          <div class="flex justify-between items-start mb-6">
+            <div class="flex items-center gap-2">
+              <div
+                class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center text-orange-600 font-bold text-lg"
+              >
+                4
+              </div>
+              <span
+                class="text-xs font-bold tracking-widest uppercase text-orange-600"
+                >Pillar 4</span
+              >
+            </div>
+            <span
+              data-badge
+              class="hidden text-[10px] font-bold tracking-widest uppercase bg-orange-100 text-orange-700 px-2.5 py-1 rounded-full"
+              >Completed</span
+            >
+          </div>
+          <h3 class="text-2xl font-bold mb-2 text-slate-900 tracking-tight">
+            Global Perspectives
+          </h3>
+          <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+            Calibrate your service delivery to distinct international markets.
+            Understand historical contexts and relational expectations.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span
+              class="text-[10px] font-bold tracking-widest uppercase bg-white/60 border border-slate-200 text-slate-500 px-2.5 py-1 rounded-full"
+              >Est. 20 min</span
+            >
+            <span
+              class="text-[10px] font-bold tracking-widest uppercase bg-white/60 border border-slate-200 text-slate-500 px-2.5 py-1 rounded-full"
+              >Calibration</span
+            >
+          </div>
+          <div
+            class="inline-flex items-center text-sm font-semibold text-orange-600 group-hover:text-orange-700 transition-colors"
+          >
+            Start Module
+            <span class="ml-2 group-hover:translate-x-1 transition-transform"
+              >&rarr;</span
+            >
+          </div>
+        </a>
+      </div>
+
+      <section class="animate-fade-in-up" style="animation-delay: 0.6s">
+        <h3 class="text-2xl font-bold tracking-tight text-slate-900 mb-6">
+          The Leader's Toolkit
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <a
+            href="public/connecting-others.html#grow-accordion"
+            class="bg-white border border-slate-200 p-5 rounded-xl hover:shadow-md hover:border-emerald-300 transition-all flex items-start gap-4 group"
+          >
+            <div
+              class="bg-emerald-50 text-emerald-600 p-3 rounded-lg group-hover:bg-emerald-100 transition-colors"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h4
+                class="font-bold text-slate-900 text-sm mb-1 group-hover:text-emerald-700 transition-colors"
+              >
+                GROW Generator
+              </h4>
+              <p class="text-xs text-slate-500">
+                Draft a printable coaching plan.
+              </p>
+            </div>
+          </a>
+          <a
+            href="public/industry-excellence.html"
+            class="bg-white border border-slate-200 p-5 rounded-xl hover:shadow-md hover:border-purple-300 transition-all flex items-start gap-4 group"
+          >
+            <div
+              class="bg-purple-50 text-purple-600 p-3 rounded-lg group-hover:bg-purple-100 transition-colors"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h4
+                class="font-bold text-slate-900 text-sm mb-1 group-hover:text-purple-700 transition-colors"
+              >
+                SMART Goals
+              </h4>
+              <p class="text-xs text-slate-500">Live criteria builder.</p>
+            </div>
+          </a>
+          <a
+            href="public/industry-excellence.html"
+            class="bg-white border border-slate-200 p-5 rounded-xl hover:shadow-md hover:border-blue-300 transition-all flex items-start gap-4 group"
+          >
+            <div
+              class="bg-blue-50 text-blue-600 p-3 rounded-lg group-hover:bg-blue-100 transition-colors"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h4
+                class="font-bold text-slate-900 text-sm mb-1 group-hover:text-blue-700 transition-colors"
+              >
+                Speed Drill
+              </h4>
+              <p class="text-xs text-slate-500">Test cognitive focus.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="mt-auto border-t border-slate-200 bg-white py-8 text-center no-print"
+    >
+      <div class="max-w-6xl mx-auto px-6">
+        <p class="text-sm font-semibold text-slate-900 mb-1">
+          Service Management Program
+        </p>
+        <p class="text-xs text-slate-500 font-medium">
+          Built for Service Excellence &middot; Empowering Global IT-BPM
+          Professionals
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const KEY = "scp_progress_v1";
+        const PILLARS = [
+          "inner-leader",
+          "connecting-others",
+          "industry-excellence",
+          "global-perspectives",
+        ];
+
+        // Define route mapping for the Smart Continue button
+        const ROUTES = {
+          "inner-leader": "public/inner-leader.html",
+          "connecting-others": "public/connecting-others.html",
+          "industry-excellence": "public/industry-excellence.html",
+          "global-perspectives": "public/global-perspectives.html",
+        };
+
+        const COLORS = {
+          "inner-leader": "bg-blue-500 ring-blue-100",
+          "connecting-others": "bg-emerald-500 ring-emerald-100",
+          "industry-excellence": "bg-purple-500 ring-purple-100",
+          "global-perspectives": "bg-orange-500 ring-orange-100",
+        };
+
+        const read = () => {
+          try {
+            return JSON.parse(localStorage.getItem(KEY)) || {};
+          } catch {
+            return {};
+          }
+        };
+
+        const render = () => {
+          const state = read();
+          const visited = PILLARS.filter((p) => state[p]);
+          const pct = Math.round((visited.length / PILLARS.length) * 100);
+
+          // Circular Progress Update
+          const circumference = 2 * Math.PI * 62;
+          const offset = circumference - (pct / 100) * circumference;
+          const circleFill = document.getElementById("progress-circle-fill");
+          if (circleFill) circleFill.style.strokeDashoffset = offset;
+
+          const percentDisplay = document.getElementById("progress-percent");
+          if (percentDisplay) percentDisplay.textContent = pct + "%";
+
+          // Text Update
+          document.getElementById("progress-label").textContent =
+            visited.length === 0
+              ? "Start your first pillar to begin tracking progress"
+              : visited.length === PILLARS.length
+                ? "Congratulations! All modules completed."
+                : visited.length +
+                  " of " +
+                  PILLARS.length +
+                  " modules completed (" +
+                  pct +
+                  "%).";
+
+          // UI Elements Update
+          PILLARS.forEach((p) => {
+            const dot = document.querySelector('[data-dot="' + p + '"]');
+            if (dot)
+              dot.className =
+                "w-3 h-3 rounded-full ring-2 ring-offset-1 " +
+                (state[p] ? COLORS[p] : "bg-slate-200 ring-slate-100");
+
+            const card = document.querySelector('a[data-pillar="' + p + '"]');
+            if (card) {
+              const badge = card.querySelector("[data-badge]");
+              if (badge) badge.classList.toggle("hidden", !state[p]);
+            }
+          });
+
+          // Smart Continue / Reward Button Logic
+          const resumeBtn = document.getElementById("resume-btn");
+          const certBtn = document.getElementById("cert-btn");
+
+          if (pct === 0) {
+            resumeBtn.classList.add("hidden");
+            certBtn.classList.add("hidden");
+          } else if (pct < 100) {
+            certBtn.classList.add("hidden");
+            resumeBtn.classList.remove("hidden");
+
+            // Find first uncompleted module
+            const nextModuleId = PILLARS.find((p) => !state[p]);
+            resumeBtn.onclick = () =>
+              (window.location.href = ROUTES[nextModuleId]);
+          } else {
+            // 100% Complete - Show Certificate button & Unlock Capstone
+            resumeBtn.classList.add("hidden");
+            certBtn.classList.remove("hidden");
+
+            // Unlock Capstone
+            const capstone = document.getElementById("capstone-card");
+            capstone.classList.remove("is-locked", "bg-slate-100");
+            capstone.classList.add(
+              "bg-gradient-to-br",
+              "from-slate-50",
+              "to-slate-100",
+              "hover:border-slate-400",
+            );
+
+            const capstoneBadge = document.getElementById("capstone-badge");
+            capstoneBadge.className =
+              "text-[10px] font-bold tracking-widest uppercase bg-brand-100 text-brand-700 px-2.5 py-1 rounded-full";
+            capstoneBadge.textContent = "Unlocked";
+
+            const capstoneLinkText =
+              document.getElementById("capstone-link-text");
+            capstoneLinkText.innerHTML =
+              'Begin Assessment <span class="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>';
+            capstoneLinkText.className =
+              "inline-flex items-center text-sm font-semibold text-slate-800 group-hover:text-brand-600 transition-colors";
+          }
+        };
+
+        // Event Listeners
+        document.querySelectorAll("a[data-pillar]").forEach((a) => {
+          a.addEventListener("click", () => {
+            const s = read();
+            s[a.dataset.pillar] = true;
+            localStorage.setItem(KEY, JSON.stringify(s));
+          });
+        });
+
+        document
+          .getElementById("reset-progress")
+          .addEventListener("click", () => {
+            localStorage.removeItem(KEY);
+            render();
+          });
+
+        // Certificate Modal Logic
+        const modal = document.getElementById("certificate-modal");
+        const content = document.getElementById("certificate-content");
+
+        document.getElementById("cert-btn").addEventListener("click", () => {
+          document.getElementById("cert-date").textContent =
+            new Date().toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            });
+
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+
+          setTimeout(() => {
+            modal.classList.remove("opacity-0");
+            content.classList.remove("scale-95");
+            content.classList.add("scale-100");
+          }, 10);
+        });
+
+        document.getElementById("close-cert").addEventListener("click", () => {
+          modal.classList.add("opacity-0");
+          content.classList.remove("scale-100");
+          content.classList.add("scale-95");
+          setTimeout(() => {
+            modal.classList.remove("flex");
+            modal.classList.add("hidden");
+          }, 300);
+        });
+
+        // Close modal when clicking the backdrop overlay
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            document.getElementById("close-cert").click();
+          }
+        });
+
+        render();
+      })();
+    </script>
+  </body>
+</html>

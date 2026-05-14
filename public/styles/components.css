@@ -1,0 +1,128 @@
+/**
+ * Reusable Component Styles
+ */
+
+/* Premium Cards */
+.card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition:
+    border var(--anim-snappy),
+    box-shadow var(--anim-snappy),
+    transform var(--anim-snappy);
+}
+
+.card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-float);
+  transform: translateY(-2px);
+}
+
+/* Buttons */
+.button,
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: var(--type-sm);
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--anim-snappy);
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.button-primary {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.button-primary:hover {
+  background: var(--color-bg-invert);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.button-secondary {
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+.button-secondary:hover {
+  background: var(--color-bg-default);
+  border-color: var(--color-border-hover);
+}
+
+/* Interactive Flip Card */
+.flip {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform var(--anim-smooth);
+  transform-style: preserve-3d;
+}
+
+.flip.is-flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  background: var(--color-bg-invert);
+  color: var(--color-text-invert);
+  border-color: var(--color-border-invert);
+}
+
+.flip-back h4,
+.flip-back p {
+  color: inherit;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: var(--type-sm);
+  background: var(--color-bg-default);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  transition: all var(--anim-snappy);
+}
+
+input:focus,
+textarea:focus {
+  background: var(--color-bg-surface);
+  border-color: var(--color-text-primary);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--color-text-primary);
+}
